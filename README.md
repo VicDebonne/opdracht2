@@ -44,4 +44,27 @@ Je maakt gebruik van Next.js en zijn specifieke mogelijkheden. Verdere implement
 
 ## CONCEPT
 
-...
+Met wie wil je samen een Pils drinken wanneer de Lockdown eindelijk over is? Stuur je eigen gemaakte pils naar jou vrienden!
+
+- Kies tussen meerdere soorten pils (meerkeuze)
+- Kies de kleur van een etikette
+- Vul in naar wie je de pils wilt sturen
+- Vul in van wie deze pils komt
+- (eventueel naam op etikette)
+- (eventueel tekstuele boodschap)
+- Genereer een link die je kan delen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

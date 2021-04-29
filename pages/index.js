@@ -3,8 +3,9 @@ import Layout from "../components/Layout";
 import styles from '../styles/Home.module.css'
 import utilStyles from '../styles/utils.module.css'
 
-export default function Home() {
+export default function Home({ data }) {
   return (
+
     <Layout>
       <div className={styles.container}>
 
@@ -19,7 +20,11 @@ export default function Home() {
           
             <div className={styles.input_container}>
               <div className={styles.input}>
-                <p>INPUT</p>
+              {data.map((post) => (
+                <div key={post.id}>
+                  <p>{post.name}</p>
+                </div>
+              ))}
               </div>
               <div className={styles.input}>
                 <p>PREVIEW</p>
@@ -37,14 +42,10 @@ export default function Home() {
 }
 
 export const getStaticProps = async () => {
-  const resp = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337"}`
-  );
+  const resp = await fetch("http://localhost:1337/posts");
   const data = await resp.json();
 
   return {
-    props: {
-      data,
-    },
+    props: {data},
   };
-};
+}

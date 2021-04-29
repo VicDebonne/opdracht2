@@ -6,7 +6,7 @@ import utilStyles from '../styles/utils.module.css'
 export default function Home() {
   return (
 
-    <Layout>
+    // <Layout>
       <div className={styles.container}>
 
         <Head>
@@ -38,7 +38,7 @@ export default function Home() {
         </footer> */}
 
       </div>
-    </Layout>
+    // </Layout>
   )
 }
 

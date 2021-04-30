@@ -2,7 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import utilStyles from '../styles/utils.module.css'
 
-export default function Home() {
+export default function Home({data}) {
   return (
 
     // <Layout>
@@ -19,11 +19,11 @@ export default function Home() {
           
             <div className={styles.input_container}>
               <div className={styles.input}>
-              {/* {data.map((post) => (
+              {data.map((post) => (
                 <div key={post.id}>
                   <p>{post.name}</p>
                 </div>
-              ))} */}
+              ))}
               </div>
              
               <div className={styles.input}>
@@ -41,11 +41,11 @@ export default function Home() {
   )
 }
 
-// export const getStaticProps = async () => {
-//   const resp = await fetch(`${process.env.STRAPI_URL}/posts`);
-//   const data = await resp.json();
-//     // "http://localhost:1337/posts"
-//   return {
-//     props: {data},
-//   };
-// }
+export const getStaticProps = async () => {
+  const resp = await fetch(`${process.env.STRAPI_URL}/posts`);
+  const data = await resp.json();
+    // "http://localhost:1337/posts"
+  return {
+    props: {data},
+  };
+}

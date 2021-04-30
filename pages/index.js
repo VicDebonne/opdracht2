@@ -32,10 +32,6 @@ export default function Home({data}) {
             </div>
         </main>
 
-        {/* <footer className={styles.footer}>
-          <p className={styles.sub_title}>Opdracht 2</p>
-        </footer> */}
-
       </div>
     // </Layout>
   )

@@ -25,6 +25,7 @@ export default function Home({data}) {
                 </div>
               ))}
               </div>
+              {console.log(data)}
              
               <div className={styles.input}>
                 <p>PREVIEW</p>
@@ -38,10 +39,14 @@ export default function Home({data}) {
 }
 
 export const getStaticProps = async () => {
-  const resp = await fetch(`${process.env.STRAPI_URL}/posts`);
+  const resp = await fetch(
+    `${process.env.STRAPI_URL}/posts`
+  );
   const data = await resp.json();
-    // "http://localhost:1337/posts"
+
   return {
-    props: {data},
+    props: {
+      data,
+    },
   };
-}
+};

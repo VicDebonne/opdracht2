@@ -1,0 +1,25 @@
+import utilStyles from '../styles/utils.module.css'
+import styles from './Input.module.css'
+import Inputtext from './Inputtext'
+
+const Input = ({data, onValueChange}) => {
+    return (
+       <>
+            <div className={styles.inputbox}>
+                <p className={utilStyles.h2}>Choose your type of beer:</p>
+                <form  onChange={(e) => onValueChange(e.target.value)}>
+                    {data.map((beer) => (
+                    <div key={beer.id}>
+                        <input type="radio" id="beer" name="beer" value={beer.name}/>
+                        <label for="beer" >{beer.name}</label><br></br>
+                    </div>
+                    ))}
+                </form>
+                <Inputtext/>
+            </div>
+       </>
+    );
+  };
+  
+  export default Input;
+  

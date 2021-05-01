@@ -1,11 +1,12 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import utilStyles from '../styles/utils.module.css'
+import Layout from "../components/Layout";
 
 export default function Home({data}) {
   return (
 
-    // <Layout>
+    <Layout>
       <div className={styles.container}>
 
         <Head>
@@ -36,7 +37,7 @@ export default function Home({data}) {
         </main>
 
       </div>
-    // </Layout>
+    </Layout>
   )
 }
 

@@ -11,40 +11,6 @@ export default function Home({data}) {
 
   const [beer, setBeer] = useState();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const email = e.target.email.value;
-    if(email){
-        const response = await fetch("/api/beer",{
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({email}),
-        });
-        const d = await response.json();
-        console.log(d);
-    }
-}
-
-const getForm = () => {
-    return(
-    <form onSubmit={handleSubmit}>
-        <div>
-            <p className={utilStyles.inputtitle}>Personal Message:</p>
-            <textarea type="text" id="personal" name="personal" rows="6" cols="39"/>
-        </div>
-
-        <div>
-            <p className={utilStyles.inputtitle}>Send email to:</p>
-            <input type="email" name="email" id="email" />
-        </div>
-
-        <input className={styles.button} type="submit" value="SEND!" />
-    </form>
-    );
-};
-
   return (
 
     <Layout>
@@ -53,7 +19,7 @@ const getForm = () => {
           <title>Few Beers?</title>
           <link rel="icon" href="images/favicon.png" />
         </Head>
-{getForm()}
+
         <main className={styles.main}>
             <p className={utilStyles.h2}>Who would you like to have a beer with?</p>
             <h1 className={utilStyles.h1}>Shall we have a FEW BEERS soon?</h1>

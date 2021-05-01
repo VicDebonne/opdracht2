@@ -4,7 +4,7 @@ const Inputtext = ({data, onValueChange}) => {
        <>
             <div>
                 <p className={utilStyles.inputtitle}>Personal Message:</p>
-                <textarea type="text" id="personal" name="personal" rows="6" cols="40"/>
+                <textarea type="text" id="personal" name="personal" rows="6" cols="39"/>
             </div>
        </>
     );

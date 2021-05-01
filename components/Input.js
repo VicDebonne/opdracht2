@@ -18,7 +18,12 @@ const Input = ({data, onValueChange}) => {
                 </form>
                 
                 <Inputtext/>
-                <button className={styles.button}>Make a link!</button>
+                <div>
+                    <p className={utilStyles.inputtitle}>Send email to:</p>
+                    <input className={utilStyles.inputw} type="text" id="email" name="email" />
+                </div>
+
+                <button className={styles.button}>SEND!</button>
                 
                 
             </div>

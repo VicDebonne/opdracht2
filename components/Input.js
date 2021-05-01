@@ -4,20 +4,24 @@ import Inputtext from './Inputtext'
 
 const Input = ({data, onValueChange}) => {
     return (
-       <>
+        <>
             <div className={styles.inputbox}>
-                <p className={utilStyles.h2}>Choose your type of beer:</p>
+                <p className={utilStyles.inputtitle}>Choose your type of beer:</p>
                 <form  onChange={(e) => onValueChange(e.target.value)}>
                     {data.map((beer) => (
                     <div key={beer.id}>
-                        <input type="radio" id="beer" name="beer" value={beer.name}/>
-                        <label for="beer" >{beer.name}</label><br></br>
+                        <input className={styles.inputfield} type="radio" id="beer" name="beer" value={beer.name}/>
+                        <label className={styles.inputlabel} for="beer" >{beer.name}</label><br></br>
+
                     </div>
                     ))}
+                    <Inputtext/>
+                    <button className={styles.button}>Make a link!</button>
                 </form>
-                <Inputtext/>
+                
+                
             </div>
-       </>
+        </>
     );
   };
   

@@ -1,6 +1,42 @@
 .inputbox{
-    padding: 5rem;
-    margin: 0 .5rem;
-    background-color: #F2C335;
-    border-radius: 1rem;
-  }
+  padding: 5rem;
+  margin: 0 .5rem;
+  background-color: #F2C335;
+  border-radius: 1rem;
+  height: 696.96px;
+}
+
+.inputfield{
+  margin: .7rem 0;
+  cursor: pointer;
+}
+
+.inputfield[type='radio'] {
+  width: 20px;
+  height: 20px;
+}
+
+.inputlabel{
+  color: #403A18;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  padding-left: .5rem;
+}
+
+.button{
+  margin-top: 2rem;
+  padding: 1rem 3rem;
+  border-radius: 5rem;
+  background-color: #fff;
+  box-shadow: none;
+  border: none;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  cursor: pointer;
+}
+
+.button:hover{
+  background-color: #FFE85F;
+}

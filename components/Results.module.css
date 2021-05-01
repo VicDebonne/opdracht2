@@ -1,6 +1,9 @@
-.resultsbox{
-    padding: 5rem;
+/* .resultsbox{
     margin: 0 .5rem;
     background-color: #F2C335;
+    border-radius: 1rem;
+  } */
+
+  .resultsbox{
     border-radius: 1rem;
   }

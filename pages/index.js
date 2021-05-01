@@ -13,8 +13,7 @@ export default function Home({data}) {
   return (
 
     <Layout>
-      <div className={styles.container}>
-
+      <div className={styles.container}>      
         <Head>
           <title>Few Beers?</title>
           <link rel="icon" href="images/favicon.png" />

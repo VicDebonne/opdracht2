@@ -15,9 +15,11 @@ const Input = ({data, onValueChange}) => {
 
                     </div>
                     ))}
-                    <Inputtext/>
-                    <button className={styles.button}>Make a link!</button>
+                    
                 </form>
+                
+                <Inputtext/>
+                <button className={styles.button}>Make a link!</button>
                 
                 
             </div>

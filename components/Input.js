@@ -12,7 +12,6 @@ const Input = ({data, onValueChange}) => {
                     <div key={beer.id}>
                         <input className={styles.inputfield} type="radio" id="beer" name="beer" value={beer.name}/>
                         <label className={styles.inputlabel} for="beer" >{beer.name}</label><br></br>
-
                     </div>
                     ))}
                     
@@ -28,4 +27,3 @@ const Input = ({data, onValueChange}) => {
   };
   
   export default Input;
-  

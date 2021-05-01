@@ -6,13 +6,13 @@ const Results = ({data, value}) => {
 
     const checkBeer = () => {
         if(value === "Bush Triple" ) {
-          return "/images/beer-2.jpg";
+          return "/images/beer-2.png";
         }
         if(value === "Stella Artois" ) {
-            return "/images/beer-3.jpg";
+            return "/images/beer-3.png";
         }
         if(value === "La Chouffe" ) {
-            return "/images/beer-1.jpg";
+            return "/images/beer-1.png";
         }
       }
 
@@ -30,10 +30,10 @@ const Results = ({data, value}) => {
                     width={319.44}
                     height={696.96}
                     src={checkBeer()}
-                    alst={data.name}
+                    alt={data.name}
                 />
 
-                <p>{checkBeer()}</p>
+                {/* <p>{checkBeer()}</p> */}
             </div>
         </>
     );

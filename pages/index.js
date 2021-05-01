@@ -11,6 +11,40 @@ export default function Home({data}) {
 
   const [beer, setBeer] = useState();
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    if(email){
+        const response = await fetch("/api/beer",{
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({email}),
+        });
+        const d = await response.json();
+        console.log(d);
+    }
+}
+
+const getForm = () => {
+    return(
+    <form onSubmit={handleSubmit}>
+        <div>
+            <p className={utilStyles.inputtitle}>Personal Message:</p>
+            <textarea type="text" id="personal" name="personal" rows="6" cols="39"/>
+        </div>
+
+        <div>
+            <p className={utilStyles.inputtitle}>Send email to:</p>
+            <input type="email" name="email" id="email" />
+        </div>
+
+        <input className={styles.button} type="submit" value="SEND!" />
+    </form>
+    );
+};
+
   return (
 
     <Layout>
@@ -19,11 +53,10 @@ export default function Home({data}) {
           <title>Few Beers?</title>
           <link rel="icon" href="images/favicon.png" />
         </Head>
-
+{getForm()}
         <main className={styles.main}>
             <p className={utilStyles.h2}>Who would you like to have a beer with?</p>
             <h1 className={utilStyles.h1}>Shall we have a FEW BEERS soon?</h1>
-
             {/* {data.map((beer) => (
               <div key={beer.id}>
                   {console.log(beer.img)}
@@ -35,9 +68,7 @@ export default function Home({data}) {
                   />
               </div>
             ))} */}
-
-            <div >
-              
+            <div>
               <div className={styles.input_container}>
                 <Input data={data} onValueChange={(value) => setBeer(value)}/>
                 <Results data={data} value={beer}/>

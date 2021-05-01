@@ -19,9 +19,11 @@ export default function Home({data}) {
           
             <div className={styles.input_container}>
               <div className={styles.input}>
-              {data.map((post) => (
-                <div key={post.id}>
-                  <p>{post.name}</p>
+              <p className={utilStyles.h2}>Choose your type of beer:</p>
+              {data.map((beer) => (
+                <div key={beer.id}>
+                  <input type="radio" id="male" name="gender" value="male"/>
+                  <label for="male" >{beer.name}</label><br></br>
                 </div>
               ))}
               </div>
@@ -40,7 +42,7 @@ export default function Home({data}) {
 
 export const getStaticProps = async () => {
   const resp = await fetch(
-    `${process.env.STRAPI_URL}/posts`
+    `${process.env.STRAPI_URL}/beers`
   );
   const data = await resp.json();
 

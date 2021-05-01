@@ -20,6 +20,21 @@
   font-size: 2rem;
 }
 
-.inputw{
+.input{
   width: 20rem;
+}
+
+.description{
+  color: #403A18;
+  margin-bottom: .5rem;
+  width: 50rem;
+  line-height: 2.5rem;
+  font-size: 1.2rem;
+}
+
+.line{
+  height: .5rem;
+  width: 2rem;
+  background-color: #403A18;
+  margin-top: 2rem;
 }

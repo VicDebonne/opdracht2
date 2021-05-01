@@ -40,3 +40,21 @@
 .button:hover{
   background-color: #FFE85F;
 }
+
+.link{
+  padding-left: .5rem;
+  font-style: italic;
+  text-decoration: underline;
+  font-size: 1rem;
+  color: #a57900;
+  cursor: pointer;
+}
+.link2{
+  padding-bottom: 1rem;
+  font-style: italic;
+  text-decoration: underline;
+  font-size: 1rem;
+  color: #a57900;
+  cursor: pointer;
+
+}

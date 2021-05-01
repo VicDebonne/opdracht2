@@ -23,17 +23,6 @@ export default function Home({data}) {
         <main className={styles.main}>
             <p className={utilStyles.h2}>Who would you like to have a beer with?</p>
             <h1 className={utilStyles.h1}>Shall we have a FEW BEERS soon?</h1>
-            {/* {data.map((beer) => (
-              <div key={beer.id}>
-                  {console.log(beer.img)}
-                  <Image
-                      src="/images/{beer-1.png}"
-                      alt={beer.name}
-                      width={319.44}
-                      height={696.96}
-                  />
-              </div>
-            ))} */}
             <div>
               <div className={styles.input_container}>
                 <Input data={data} onValueChange={(value) => setBeer(value)}/>

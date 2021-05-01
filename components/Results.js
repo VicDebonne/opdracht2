@@ -32,7 +32,6 @@ const Results = ({data, value}) => {
                     src={checkBeer()}
                     alt={data.name}
                 />
-
                 {/* <p>{checkBeer()}</p> */}
             </div>
         </>

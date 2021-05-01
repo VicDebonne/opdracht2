@@ -1,32 +1,31 @@
 import utilStyles from '../styles/utils.module.css'
 import styles from './Input.module.css'
-import Inputtext from './Inputtext'
 import { useState } from "react";
+import Link from 'next/link';
 
 const Input = ({data, onValueChange}) => {
     const [sending, setSending] = useState(false);
     const [error, setError] = useState();
     const [success, setSuccess] = useState(false);
   
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      setSending(true);
-      const email = e.target.email.value;
-      if (email) {
-        const r = await fetch("/api/beer", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email: email }),
-        });
-        const result = await r.json();
-        if (!result.succeeded) {
-          setError(result.reason);
-        }
-        setSuccess(true);
-        setSending(false);
-      }
+    const handleSubmit = async (event) => {
+        event.preventDefault()
+
+        const res = await fetch(
+          'https://hooks.zapier.com/hooks/catch/123456/abcde',
+          {
+            body: JSON.stringify({
+              email: event.target.email.value
+            }),
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            method: 'POST'
+          }
+        )
+    
+        const result = await res.json()
+        // result.user => 'Ada Lovelace'
     };
 
     const getForm = () => {
@@ -55,7 +54,7 @@ const Input = ({data, onValueChange}) => {
                     {data.map((beer) => (
                     <div key={beer.id}>
                         <input className={styles.inputfield} type="radio" id="beer" name="beer" value={beer.name}/>
-                        <label className={styles.inputlabel} for="beer" >{beer.name}</label><br></br>
+                        <label className={styles.inputlabel} for="beer" >{beer.name}</label><Link key={beer.id} href={'/beers/' + beer.id}><span className={styles.link}>info</span></Link>
                     </div>
                     ))}
                 </form>

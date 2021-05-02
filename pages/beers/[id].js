@@ -3,12 +3,10 @@ import utilStyles from '../../styles/utils.module.css'
 import Link from 'next/link'
 import styles from '../../components/Input.module.css'
 import Image from 'next/image'
-import image from "next/image";
 
 // const imgLoader = () => {
 //     return `${process.env.STRAPI_URL} + ${beer.img.url}`
 //   }
-
 
 const Details = ({beer}) => {
     return (
@@ -17,14 +15,7 @@ const Details = ({beer}) => {
             <h1 className={utilStyles.h1}>{beer.name}</h1>
             <p className={utilStyles.description}>{beer.description}</p>
             <div className={utilStyles.line}></div>
-
-            {/* <Image
-                src="/f"
-                alt={beer.name}
-                width={100}
-                height={100}
-            />
-            {console.log(beer.img.)} */}
+            {/* <img src={process.env.STRAPI_URL+beer.img[0].url} alt={beer.name}></img> */}
         </Layout>
     );
   };

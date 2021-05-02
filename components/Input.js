@@ -4,47 +4,70 @@ import { useState } from "react";
 import Link from 'next/link';
 
 const Input = ({data, onValueChange}) => {
-    const [sending, setSending] = useState(false);
-    const [error, setError] = useState();
-    const [success, setSuccess] = useState(false);
-  
-    const handleSubmit = async (event) => {
-        event.preventDefault()
+        const [show, setShow] = useState(true);
+        const [hide, setHide] = useState(false);
 
-        const res = await fetch(
-          'https://hooks.zapier.com/hooks/catch/123456/abcde',
-          {
-            body: JSON.stringify({
-              email: event.target.email.value
-            }),
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            method: 'POST'
-          }
-        )
-    
-        const result = await res.json()
-        // result.user => 'Ada Lovelace'
-    };
 
-    const getForm = () => {
-        return(
-        <form onSubmit={handleSubmit}>
-            <div>
-                <p className={utilStyles.inputtitle}>Personal Message:</p>
-                <textarea type="text" id="personal" name="personal" rows="6" cols="39"/>
-            </div>
+        const handleSubmit = async (event) => {
+            event.preventDefault()
 
-            <div>
-                <p className={utilStyles.inputtitle}>Send email to:</p>
-                <input type="email" name="email" id="email" />
-            </div>
+            const res = await fetch(
+            'https://hooks.zapier.com/hooks/catch/123456/abcde',
+            {
+                body: JSON.stringify({
+                email: event.target.email.value
+                }),
+                headers: {
+                'Content-Type': 'application/json'
+                },
+                method: 'POST'
+            }
+            )
+            const result = await res.json()
+            // result.user => 'Ada Lovelace'
+        };
 
-            <input className={styles.button} type="submit" value="SEND!" />
-        </form>
-        );
-    };
+        const getForm = () => {
+            const toggleShow = () => {
+                setShow(!show);
+                console.log(show);
+            }
+
+            const toggleHide= () => {
+                setHide(!hide);
+                console.log(hide);
+            }
+
+            return(
+                <form > {/*onSubmit={handleSubmit}*/}
+                    <div>
+                        <p className={utilStyles.inputtitle}>Personal Message:</p>
+                        <textarea type="text" id="personal" name="personal" rows="6" cols="39"/>
+                    </div>
+
+                    <div style={{
+                        display: show?"block":"none"
+                    }}>
+                        <p className={utilStyles.inputtitle}>Send email to:</p>
+                        <input className={styles.email} type="email" name="email" id="email" />
+                        <a className={styles.button} onClick={() => {
+                            toggleShow();
+                            toggleHide();
+                        }}>SEND!</a>
+                    </div>
+
+                    <div style={{
+                        display: hide?"block":"none"
+                    }}>
+                        <p className={utilStyles.response}>Your friend gets your email, ENJOY YOUR DRINK!</p>
+                        <a className={styles.link2} onClick={() => {
+                            toggleShow();
+                            toggleHide();
+                        }}>Send another email</a>
+                    </div>
+                </form>
+            );
+        };
 
     return (
         <>

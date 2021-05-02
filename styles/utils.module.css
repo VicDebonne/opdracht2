@@ -38,3 +38,13 @@
   background-color: #403A18;
   margin-top: 2rem;
 }
+
+.response{
+  margin-bottom: .5rem;
+  font-weight: bold;
+  margin-top: 2.5rem;
+
+  background-color: #403A18;
+  color: #fff;
+  padding: 1rem;
+}

@@ -8,11 +8,8 @@ import { useState } from "react";
 import Image from 'next/image'
 
 export default function Home({data}) {
-
   const [beer, setBeer] = useState();
-
   return (
-
     <Layout>
       <div className={styles.container}>      
         <Head>
@@ -47,19 +44,3 @@ export const getStaticProps = async () => {
     },
   };
 };
-
-// export const getStaticPaths = async () => {
-//   const r = await fetch(
-//     `${process.env.STRAPI_URL}/beers?_limit=1&_sort=id:desc`
-//   );
-//   const data = await r.json();
-
-//   return {
-//     paths: data.map((beer) => ({
-//       params: {
-//         slug: beer.slug,
-//       },
-//     })),
-//     fallback: true,
-//   };
-// };

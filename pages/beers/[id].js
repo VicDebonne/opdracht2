@@ -4,18 +4,28 @@ import Link from 'next/link'
 import styles from '../../components/Input.module.css'
 import Image from 'next/image'
 
-// const imgLoader = () => {
-//     return `${process.env.STRAPI_URL} + ${beer.img.url}`
-//   }
-
 const Details = ({beer}) => {
+
+    // const loadImage = () => {
+    //     const url = beer.img;
+    // }
+
+    // const beerImg = beer.img[0];
+    // const url = `/ + ${process.env.STRAPI_URL} + ${beerImg.url}`;
+
     return (
         <Layout>
             <Link href={'/'}><span className={styles.link2}> back</span></Link>
             <h1 className={utilStyles.h1}>{beer.name}</h1>
             <p className={utilStyles.description}>{beer.description}</p>
             <div className={utilStyles.line}></div>
-            {/* <img src={process.env.STRAPI_URL+beer.img[0].url} alt={beer.name}></img> */}
+            {/* {console.log(beerImg.url)} */}
+            {/* <Image 
+                src={url}
+                alt="Picture of a beer"
+                width={319.44}
+                height={696.96}
+            /> */}
         </Layout>
     );
   };
@@ -51,3 +61,4 @@ export const getStaticProps = async (context) => {
         props: {beer:data}
     }
 }
+
